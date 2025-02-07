@@ -1,0 +1,5 @@
+C:\Users\Korystuvach\Desktop\repo_paradigms\Laboratoria_J-zyki_i_Paradygmaty_Programowania\F#Labs_4-8\lab4\obj\Debug\net8.0\F#Labs.fsproj.AssemblyReference.cache
+C:\Users\Korystuvach\Desktop\repo_paradigms\Laboratoria_J-zyki_i_Paradygmaty_Programowania\F#Labs_4-8\lab4\obj\Debug\net8.0\F#Labs.AssemblyInfoInputs.cache
+C:\Users\Korystuvach\Desktop\repo_paradigms\Laboratoria_J-zyki_i_Paradygmaty_Programowania\F#Labs_4-8\lab4\obj\Debug\net8.0\F#Labs.AssemblyInfo.fs
+C:\Users\Korystuvach\Desktop\repo_paradigms\Laboratoria_J-zyki_i_Paradygmaty_Programowania\F#Labs_4-8\lab4\obj\Debug\net8.0\F#Labs.fsproj.CoreCompileInputs.cache
+C:\Users\Korystuvach\Desktop\repo_paradigms\Laboratoria_J-zyki_i_Paradygmaty_Programowania\F#Labs_4-8\lab4\obj\Debug\net8.0\F#Labs.sourcelink.json
