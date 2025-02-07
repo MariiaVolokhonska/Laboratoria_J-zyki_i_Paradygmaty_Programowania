@@ -1,18 +1,20 @@
-type User = {Weight: float; Height: float}
 
-//Obliczenie BMI
-//Waga(kg)^2/wzrost(m)
+let exchangeRates =
+    Map [
+        ("USD", "EUR"), 0.97
+        ("USD", "GBP"), 0.81
+        ("EUR", "USD"), 1.0 / 0.97
+        ("EUR", "GBP"), 0.83
+        ("GBP", "USD"), 1.0 / 0.81
+        ("GBP", "EUR"), 1.0 / 0.83
+    ]
 
-let calculateBMI user =
-    let heightmetres = user.Height/100.0
-    user.Weight / (heightmetres ** 2.0)
-
-
-let categoryBMI bmi=
-    if bmi <18.5 then "Niedowaga"
-    elif bmi <24.9 then "Waga Prawidłowa"
-    elif bmi <29.9 then "Nadwaga"
-    else "Otylosc"
+let convertCurrency amount fromCurrency toCurrency=
+    match exchangeRates.TryFind(fromCurrency, toCurrency) with
+    | Some rate -> amount * rate
+    | None ->
+        printfn "Nie można konwertować walute."
+        0.0
 
 
 let rec readFloat prompt =
@@ -22,18 +24,23 @@ let rec readFloat prompt =
     |_ -> 
         printfn "Bledne dane. Uzyj popranych danych typu numerycznego"
         readFloat prompt
-
-
+let rec readString prompt =
+    printfn "%s" prompt
+    match System.Console.ReadLine() with
+    | "GPB"-> "GPB"
+    | "EUR"-> "EUR"
+    | "USD"-> "USD"
+    |_ -> 
+        printfn "Bledne dane. Uzyj popranych danych : USD, EUR, GBP"
+        readString prompt
 let main() =
-    let weight  = readFloat "Podaj swoja wage w kg: "
-    let height = readFloat "Podaj swoj wzrost w cm "
+    let currentCurrency = readString "Wprowadz walutę początkową (USD, EUR, GBP)"
+    let expectedCurrency=readString "Wprowadz walute docelową (USD, EUR, GBP)"
+    let amountOfMoney = readFloat "Wprowadz kwotę którą trzeba przekonwertować"
 
+   
 
-    let user = { Weight = weight; Height = height}
-
-    let bmi = calculateBMI user
-
-    printfn "Twoje BMI wynosi: %.2f" bmi
-    printfn "Twoja kategoria BMU %s" (categoryBMI bmi)
+    let result = convertCurrency amountOfMoney currentCurrency expectedCurrency
+    printfn "Przeliczona kwota: %.2f %s" result expectedCurrency
 
 main()
